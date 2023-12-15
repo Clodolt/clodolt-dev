@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from "react";
 import Intro from "./introduction";
 import Interest from "./interest";
+import ProfessionalSkills from "./professional-skills";
+import PersonalSkills from "./personal-skills";
 
 export default function Home() {
   return (
@@ -26,6 +28,22 @@ export default function Home() {
         </div>
         <div className="w-full mb-64">
           <p className="text-center text-3xl my-10">Skills</p>
+          <div className="flex justify-center flex-wrap gap-14">
+            <div>
+              <p className="text-center text-2xl mt-10 mb-2">Professional</p>
+              <p className="text-center mb-10">
+                Skills I have used in a professional context
+              </p>
+              <ProfessionalSkills />
+            </div>
+            <div>
+              <p className="text-center text-2xl mt-10 mb-2">Personal</p>
+              <p className="text-center mb-10">
+                Skills I have only used in a hobby projects
+              </p>
+              <PersonalSkills />
+            </div>
+          </div>
         </div>
       </div>
     </div>
