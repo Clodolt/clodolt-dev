@@ -4,6 +4,7 @@ import Intro from "./introduction";
 import Interest from "./interest";
 import ProfessionalSkills from "./professional-skills";
 import PersonalSkills from "./personal-skills";
+import ExperienceTile from "./experience";
 
 export default function Home() {
   return (
@@ -43,6 +44,48 @@ export default function Home() {
               </p>
               <PersonalSkills />
             </div>
+          </div>
+        </div>
+        <div className="w-full mb-64">
+          <p className="text-center text-3xl my-10">Education and Career</p>
+          <div className="flex justify-center flex-wrap gap-14">
+          <ExperienceTile
+              title="University of Augsburg"
+              image="/unia.jpeg"
+              left={false}
+            >
+              Currently enrolled in the B.Sc. Business Informatics program with a specialization in Informatics at the University of Augsburg, which is recognized as the leading German university for the degree according to CHE rankings.
+            </ExperienceTile>
+            <ExperienceTile
+              title="FIM Forschungsinstitut"
+              image="/fim.jpg"
+              left={true}
+            >
+              Development of a Webapp with a periodic crawler to look for new
+              releases in scientific journals and notify registred scholars via
+              E-mail.
+            </ExperienceTile>
+            <ExperienceTile
+              title="XITASO"
+              image="/Xitaso.jpg"
+              left={false}
+            >
+              Development of a Webapp for Employee and Project Management with word portfolio generation in collaboration with the University of Augsburg.
+            </ExperienceTile>
+            <ExperienceTile
+              title="WOLF"
+              image="/baeckereiwolf.png"
+              left={true}
+            >
+              Development of multiple internal applications in addition to IT-Project Management.
+            </ExperienceTile>
+            <ExperienceTile
+              title="MaibornWolff"
+              image="/logo-mw-2x.png"
+              left={false}
+            >
+              Multiple projects with a focus in Full-Stack Web-Development with a side of DevOps.
+            </ExperienceTile>
           </div>
         </div>
       </div>
