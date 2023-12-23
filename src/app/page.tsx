@@ -4,7 +4,7 @@ import Intro from "./introduction";
 import Interest from "./interest";
 import ProfessionalSkills from "./professional-skills";
 import PersonalSkills from "./personal-skills";
-import ExperienceTile from "./experience";
+import ExperienceTile, { ExperienceSpacer } from "./experience";
 
 export default function Home() {
   return (
@@ -48,7 +48,7 @@ export default function Home() {
         </div>
         <div className="w-full mb-64">
           <p className="text-center text-3xl my-10">Education and Career</p>
-          <div className="flex justify-center flex-wrap gap-14">
+          <div className="flex justify-center flex-wrap">
           <ExperienceTile
               title="University of Augsburg"
               image="/unia.jpeg"
@@ -56,6 +56,7 @@ export default function Home() {
             >
               Currently enrolled in the B.Sc. Business Informatics program with a specialization in Informatics at the University of Augsburg, which is recognized as the leading German university for the degree according to CHE rankings.
             </ExperienceTile>
+            <ExperienceSpacer />
             <ExperienceTile
               title="FIM Forschungsinstitut"
               image="/fim.jpg"
@@ -65,6 +66,7 @@ export default function Home() {
               releases in scientific journals and notify registred scholars via
               E-mail.
             </ExperienceTile>
+            <ExperienceSpacer />
             <ExperienceTile
               title="XITASO"
               image="/Xitaso.jpg"
@@ -72,6 +74,7 @@ export default function Home() {
             >
               Development of a Webapp for Employee and Project Management with word portfolio generation in collaboration with the University of Augsburg.
             </ExperienceTile>
+            <ExperienceSpacer />
             <ExperienceTile
               title="WOLF"
               image="/baeckereiwolf.png"
@@ -79,6 +82,7 @@ export default function Home() {
             >
               Development of multiple internal applications in addition to IT-Project Management.
             </ExperienceTile>
+            <ExperienceSpacer />
             <ExperienceTile
               title="MaibornWolff"
               image="/logo-mw-2x.png"
