@@ -5,12 +5,14 @@ import Interest from "./interest";
 import ProfessionalSkills from "./professional-skills";
 import PersonalSkills from "./personal-skills";
 import ExperienceTile, { ExperienceSpacer } from "./experience";
-import Image from 'next/image'
+import About from "./about";
+import ExperienceSection from "./experienceSection";
+
 
 export default function Home() {
   return (
     <div className="p-2.5">
-      <div className="relative flex w-full items-center  h-screen">
+      <div className="relative flex w-full items-center h-screen">
         <div className="z-10 mb-8 ml-6 mt-4 text-left sm:mb-20 sm:ml-24 sm:mt-[20vh]">
           <Intro />
         </div>
@@ -41,7 +43,7 @@ export default function Home() {
             <div>
               <p className="text-center text-2xl mt-10 mb-2">Personal</p>
               <p className="text-center mb-10">
-                Skills I have only used in a hobby projects
+                Skills I have only used in hobby projects
               </p>
               <PersonalSkills />
             </div>
@@ -49,62 +51,17 @@ export default function Home() {
         </div>
         <div className="w-full mb-64">
           <p className="text-center text-3xl my-10">Education and Career</p>
-          <div className="flex justify-center flex-wrap">
-          <ExperienceTile
-              title="University of Augsburg"
-              image="/unia.jpeg"
-              left={false}
-            >
-              Currently enrolled in the B.Sc. Business Informatics program with a specialization in Informatics at the University of Augsburg, which is recognized as the leading German university for the degree according to CHE rankings.
-            </ExperienceTile>
-            <ExperienceSpacer />
-            <ExperienceTile
-              title="FIM Forschungsinstitut"
-              image="/fim.jpg"
-              left={true}
-            >
-              Development of a Webapp with a periodic crawler to look for new
-              releases in scientific journals and notify registred scholars via
-              E-mail.
-            </ExperienceTile>
-            <ExperienceSpacer />
-            <ExperienceTile
-              title="XITASO"
-              image="/Xitaso.jpg"
-              left={false}
-            >
-              Development of a Webapp for Employee and Project Management with word portfolio generation in collaboration with the University of Augsburg.
-            </ExperienceTile>
-            <ExperienceSpacer />
-            <ExperienceTile
-              title="WOLF"
-              image="/baeckereiwolf.png"
-              left={true}
-            >
-              Development of multiple internal applications in addition to IT-Project Management.
-            </ExperienceTile>
-            <ExperienceSpacer />
-            <ExperienceTile
-              title="MaibornWolff"
-              image="/logo-mw-2x.png"
-              left={false}
-            >
-              Multiple projects with a focus in Full-Stack Web-Development with a side of DevOps.
-            </ExperienceTile>
+          <ExperienceSection />
+        </div>
+        <div className="w-full mb-64">
+          <div className="grid grid-cols-1">
+            <About />
           </div>
         </div>
         <div className="w-full mb-64">
-          <p className="text-center text-3xl my-10">About me</p>
-          <div className="grid grid-cols-3">
-            <div></div>
-            <div>
-            <Image src="/unia.jpeg" alt="" width={200} height={200}></Image>
-            <div className="max-w-lg">
-              <p className="text-lg">Nice to meet you...</p>
-              <p className="">sihaodfijafjpjapfj asodjpaoskd odsjapdoas sakdpsajdpa aspdjpsajdp saojdpasjdpasdj spaodkpsa</p>
-            </div>
-            </div>
-            <div></div>
+        <p className="text-center text-3xl my-10">Personal Projects</p>
+          <div className="grid grid-cols-1">
+            
           </div>
         </div>
       </div>
