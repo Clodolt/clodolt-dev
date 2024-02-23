@@ -5,6 +5,7 @@ import Interest from "./interest";
 import ProfessionalSkills from "./professional-skills";
 import PersonalSkills from "./personal-skills";
 import ExperienceTile, { ExperienceSpacer } from "./experience";
+import Image from 'next/image'
 
 export default function Home() {
   return (
@@ -90,6 +91,20 @@ export default function Home() {
             >
               Multiple projects with a focus in Full-Stack Web-Development with a side of DevOps.
             </ExperienceTile>
+          </div>
+        </div>
+        <div className="w-full mb-64">
+          <p className="text-center text-3xl my-10">About me</p>
+          <div className="grid grid-cols-3">
+            <div></div>
+            <div>
+            <Image src="/unia.jpeg" alt="" width={200} height={200}></Image>
+            <div className="max-w-lg">
+              <p className="text-lg">Nice to meet you...</p>
+              <p className="">sihaodfijafjpjapfj asodjpaoskd odsjapdoas sakdpsajdpa aspdjpsajdp saojdpasjdpasdj spaodkpsa</p>
+            </div>
+            </div>
+            <div></div>
           </div>
         </div>
       </div>
