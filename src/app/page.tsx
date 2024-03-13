@@ -1,13 +1,12 @@
 "use client";
-import React, { useEffect, useState } from "react";
 import Intro from "./introduction";
 import Interest from "./interest";
 import ProfessionalSkills from "./professional-skills";
 import PersonalSkills from "./personal-skills";
-import ExperienceTile, { ExperienceSpacer } from "./experience";
 import About from "./about";
 import ExperienceSection from "./experienceSection";
-
+import Image from "next/image";
+import CVApp from "../../public/CV.gif";
 
 export default function Home() {
   return (
@@ -59,9 +58,12 @@ export default function Home() {
           </div>
         </div>
         <div className="w-full mb-64">
-        <p className="text-center text-3xl my-10">Personal Projects</p>
+          <p className="text-center text-3xl my-10">Personal Projects</p>
           <div className="grid grid-cols-1">
-            
+            <div className="p-4 flex flex-col items-center w-96 h-64 bg-gray-900 rounded-xl shadow-lg shadow-gray-700">
+              <Image className="m-auto" src={CVApp} alt="CV App" />
+              <p className="text-center text-lg mt-auto">CV App</p>
+            </div>
           </div>
         </div>
       </div>
