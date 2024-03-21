@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import SkillBadge from './skill-badge';
 
 const skills = [
@@ -25,13 +25,38 @@ const skills = [
     "Midjourney"
 ];
 
-export default function PersonalSkills() {
-  return(
-    <div className="flex flex-wrap gap-2 max-w-xl">
-        {skills.map((skill) => (
-            <SkillBadge key={skill} name={skill} />
-        ))}
+export default function ProfessionalSkills() {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target); 
+        }
+      });
+    }, {
+      threshold: 0.1 
+    });
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+  return (
+    <div ref={ref} className="flex flex-wrap gap-2 max-w-xl">
+      {skills.map((skill, index) => (
+        <SkillBadge
+          key={skill}
+          name={skill}
+          isVisible={isVisible} 
+          animationDelay={index * 100}
+        />
+      ))}
     </div>
-  )
+  );
 }
