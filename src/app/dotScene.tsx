@@ -54,7 +54,7 @@ const DotsBackground: React.FC = () => {
       if (scrollPercent < 0.5) {
         camera.position.z = 20 - scrollPercent * 20;
         camera.position.x = -15 + scrollPercent * 30;
-        particleMaterial.size = 0.05 - scrollPercent * 0.1;
+        particleMaterial.size = 0.05 - scrollPercent * 0.07;
         
         
       }

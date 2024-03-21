@@ -3,7 +3,7 @@ import portrait from "../../public/portrait.png";
 
 export default function About() {
   return (
-    <div className="grid grid-cols-2">
+    <div className="flex mx-auto">
       <div className="max-w-lg mr-0 ml-auto">
         <p className="text-justify font-bold">Nice to meet you...</p>
         <p>
