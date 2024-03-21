@@ -5,18 +5,26 @@ import ProfessionalSkills from "./professional-skills";
 import PersonalSkills from "./personal-skills";
 import About from "./about";
 import ExperienceSection from "./experienceSection";
-import Image from "next/image";
-import CVApp from "../../public/projects/CVProject.gif";
+import { StaticImageData } from "next/image";
 import DiscordBot from "../../public/projects/Bot.gif";
 import Tooki from "../../public/projects/tookiorg.gif";
 import Rezept from "../../public/projects/Rezept.png";
 import ProjectTile from "./projectTile";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import ProjectModal from "./projectModal";
 
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
+  const [projectModalImage, setProjectModalImage] = useState<StaticImageData>();
+
+  const handleProjectModalChange = (image: StaticImageData) => {
+    setProjectModalImage(image);
+    setShowModal(true);
+  }
+
+  const handleProjectModalClose = () => {
+    setShowModal(false);
+  }
   return (
     <div className="p-2.5">
       <div className="relative flex w-full items-center h-screen">
@@ -77,7 +85,7 @@ export default function Home() {
         <div className="w-full mb-64">
           <p className="text-center text-3xl my-10">Personal Projects</p>
           <div className="flex mx-auto items-center justify-evenly flex-wrap gap-8">
-            <ProjectTile image={Tooki} name="Tooki.org">
+            <ProjectTile image={Tooki} name="Tooki.org" handleModalChange={handleProjectModalChange}>
               <p>
                 A Web Applicaton built to support players in the MMORPG Lost Ark
               </p>
@@ -89,7 +97,7 @@ export default function Home() {
                 </span>
               </p>
             </ProjectTile>
-            <ProjectTile image={DiscordBot} name="Bot207">
+            <ProjectTile image={DiscordBot} name="Bot207" handleModalChange={handleProjectModalChange}>
               <p>
                 A DiscordBot tailored to my Servers needs with an advanced
                 custom Music Player!
@@ -99,7 +107,7 @@ export default function Home() {
                 <span>TypeScript, Node, DiscordJS, MongoDB</span>
               </p>
             </ProjectTile>
-            <ProjectTile image={DiscordBot} name="Portfolio">
+            <ProjectTile image={DiscordBot} name="Portfolio" handleModalChange={handleProjectModalChange}>
               <p>
                 The website you are currently on with an API Service for some
                 smaller projects.
@@ -109,7 +117,7 @@ export default function Home() {
                 <span>TypeScript, Node, React, Next.js, Three.js</span>
               </p>
             </ProjectTile>
-            <ProjectTile image={Rezept} name="RezAppt">
+            <ProjectTile image={Rezept} name="RezAppt" handleModalChange={handleProjectModalChange}>
               <p>
                 A recipe book and meal planner, using AI for meal suggestions!
                 (WIP)
@@ -123,18 +131,7 @@ export default function Home() {
             </ProjectTile>
           </div>
         </div>
-        {showModal && (
-          <div className="fixed flex w-full h-full top-0 left-0 bg-gray-700 bg-opacity-30 justify-center items-center z-[999]" onClick={() => {setShowModal(false)}} >
-          <div className="p-8 flex flex-col w-2/3 h-4/5 items-center relative bg-gray-900 rounded-xl shadow-lg shadow-gray-700">
-            <div className="absolute flex items-center justify-center w-10 h-10 -right-4 -top-4 bg-slate-700 rounded-full hover:cursor-pointer hover:bg-white hover:text-black">
-              <FontAwesomeIcon icon={faTimes} size="xl" />
-            </div>
-            <div className="w-full h-full relative">
-              <Image src={Tooki} alt="Tooki" layout="fill" objectFit="cover" />
-            </div>
-          </div>
-        </div>
-        )}
+        {showModal && <ProjectModal image={projectModalImage} handleClose={handleProjectModalClose} />}
       </div>
     </div>
   );
