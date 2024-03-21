@@ -25,7 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
       <DotsBackground />
-      <nav className="fixed top-0 left-0 p-4 bg-red text-white z-50">
+      <nav className="absolute top-0 left-0 p-4 bg-red text-white z-50">
       <Link href="https://github.com/Clodolt" target='_blank' >
         <FontAwesomeIcon icon={faGithub} color="white" size="2x" />
       </Link>
