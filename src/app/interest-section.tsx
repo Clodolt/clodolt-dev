@@ -1,14 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import Interest from "./interest";
-
-const interestsMap = {
-    "Frontend": "/interests/React-icon.svg",
-    "Backend": "/interests/Spring_Boot.svg.png",
-    "DevOps": "/interests/Kubernetes-icon-color.svg",
-    "Consumer tech": "/interests/gpu.png",
-    "Extended reality": "/interests/vr-glasses.png",
-    "Artificial intelligence": "/interests/ai.png",
-  };
   
 
 export default function InterestSection() {
@@ -41,13 +32,13 @@ export default function InterestSection() {
               name="DevOps"
               image="/interests/Kubernetes-icon-color.svg"
             />
-            <Interest name="Consumer tech" image="/interests/gpu.png" />
+            <Interest name="Consumer Tech" image="/interests/gpu.png" />
             <Interest
-              name="Extended reality"
+              name="Extended Reality"
               image="/interests/vr-glasses.png"
             />
             <Interest
-              name="Artificial intelligence"
+              name="Artificial Intelligence"
               image="/interests/ai.png"
             />
           </div>

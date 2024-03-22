@@ -49,7 +49,7 @@ export function ExperienceSpacer() {
     <div className="items-center w-full max-w-4xl">
       <div></div>
       <div className="flex justify-center items-center">
-        <div className="w-2 h-24 bg-white"></div>
+        <div className="w-2 h-36 bg-white"></div>
       </div>
       <div></div>
     </div>

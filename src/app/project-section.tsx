@@ -14,7 +14,7 @@ export default function ProjectSection({handleProjectModalChange}: Props) {
         <div className="flex mx-auto items-center justify-evenly flex-wrap gap-8">
             <ProjectTile image={Tooki} name="Tooki.org" handleModalChange={handleProjectModalChange}>
               <p>
-                A Web Applicaton built to support players in the MMORPG Lost Ark
+                A Web Applicaton built to support players in the MMORPG Lost Ark.
               </p>
               <p className="mt-2">
                 <b>Tech-Stack:&nbsp;</b>
@@ -27,7 +27,7 @@ export default function ProjectSection({handleProjectModalChange}: Props) {
             <ProjectTile image={DiscordBot} name="Bot207" handleModalChange={handleProjectModalChange}>
               <p>
                 A DiscordBot tailored to my Servers needs with an advanced
-                custom Music Player!
+                custom Music Player.
               </p>
               <p className="mt-2">
                 <b>Tech-Stack:&nbsp;</b>
@@ -45,13 +45,13 @@ export default function ProjectSection({handleProjectModalChange}: Props) {
             </ProjectTile>
             <ProjectTile image={Rezept} name="RezAppt" handleModalChange={handleProjectModalChange}>
               <p>
-                A recipe book and meal planner, using AI for meal suggestions!
+                A recipe book and meal planner, using AI for meal suggestions.
                 (WIP)
               </p>
               <p className="mt-2">
                 <b>Tech-Stack:&nbsp;</b>
                 <span>
-                  TypeScript, React, Java, Spring Boot, Hibernate, PostgresSQL
+                  TypeScript, React, Java, Spring Boot, PostgresSQL
                 </span>
               </p>
             </ProjectTile>

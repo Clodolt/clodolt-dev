@@ -35,7 +35,7 @@ export default function Home() {
       </div>
       <div className="px-14">
         <div className="w-full mb-64">
-          <p className="text-center text-3xl my-10">Current obesessions</p>
+          <p className="text-center text-3xl my-10">Current obsessions</p>
           <InterestSection />
           <p className="text-center my-10">and much more!</p>
         </div>

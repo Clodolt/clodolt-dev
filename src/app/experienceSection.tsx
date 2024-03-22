@@ -31,10 +31,11 @@ export default function ExperienceSection() {
               image="/unia.jpeg"
               left={false}
             >
-              Currently enrolled in the B.Sc. Business Informatics program with
-              a specialization in Informatics at the University of Augsburg,
-              which is recognized as the leading German university for the
-              degree according to CHE rankings.
+              <p className="font-bold">10/2019 - Now</p>
+              <ul className="list-disc mt-2 text-justify tracking-tighter">
+                <li>Enrolled in the B.Sc. Business Informatics program</li>
+                <li className="mt-2">Specialization in informatics</li>
+              </ul>
             </ExperienceTile>
             <ExperienceSpacer />
             <ExperienceTile
@@ -42,20 +43,28 @@ export default function ExperienceSection() {
               image="/fim.jpg"
               left={true}
             >
-              Development of a Webapp with a periodic crawler to look for new
-              releases in scientific journals and notify registred scholars via
-              E-mail.
+              <p className="font-bold">05/2020 - 09/2020</p>
+              <ul className="list-disc mt-2 text-justify tracking-tighter">
+                <li>Development of a Webcrawler Webapp to support scholars in collaboration with the University</li>
+                <li className="mt-2">Python, JavaScript, Django, Bootstrap, Scrapy, MariaDB</li>
+              </ul>
             </ExperienceTile>
             <ExperienceSpacer />
             <ExperienceTile title="XITASO" image="/Xitaso.jpg" left={false}>
-              Development of a Webapp for Employee and Project Management with
-              word portfolio generation in collaboration with the University of
-              Augsburg.
+            <p className="font-bold">04/2021 - 08/2021</p>
+              <ul className="list-disc mt-2 text-justify tracking-tighter">
+                <li>Development of a Webapp for Employee and Project Management in collaboration with the University</li>
+                <li className="mt-2">C#, Microsoft SQL Server, JavaScript, ASP.NET, Docker, Blazor, Microsoft Azure</li>
+              </ul>
             </ExperienceTile>
             <ExperienceSpacer />
             <ExperienceTile title="WOLF" image="/baeckereiwolf.png" left={true}>
-              Development of multiple internal applications in addition to
-              IT-Project Management.
+            <p className="font-bold">04/2021 - 08/2021</p>
+              <ul className="list-disc mt-2 text-justify tracking-tighter">
+                <li>Development of multiple internal applications in addition to
+              IT-Project Management.</li>
+                <li className="mt-2">PHP, TypeScript, Raspberry Pi, MySQL, Symfony React, Next.js, PostgreSQL, Material-UI, and Cypress.io</li>
+              </ul>
             </ExperienceTile>
             <ExperienceSpacer />
             <ExperienceTile
@@ -63,8 +72,12 @@ export default function ExperienceSection() {
               image="/logo-mw-2x.png"
               left={false}
             >
-              Multiple projects with a focus in Full-Stack Web-Development with
-              a side of DevOps.
+              <p className="font-bold">04/2021 - 08/2021</p>
+              <ul className="list-disc mt-2 text-justify tracking-tighter">
+                <li>Multiple projects with a focus in Full-Stack Web-Development with
+              a side of DevOps.</li>
+                <li className="mt-2">Java, Spring Boot, MongoDB, TypeScript, Angular, Docker, Kubernetes, JUnit, React, Remix, Prisma, PostgreSQL, Azure DevOps</li>
+              </ul>
             </ExperienceTile>
           </div>
     )
