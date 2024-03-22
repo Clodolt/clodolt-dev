@@ -59,7 +59,7 @@ export default function ExperienceSection() {
             </ExperienceTile>
             <ExperienceSpacer />
             <ExperienceTile title="WOLF" image="/baeckereiwolf.png" left={true}>
-            <p className="font-bold">04/2021 - 08/2021</p>
+            <p className="font-bold">10/2020 - 09/2022</p>
               <ul className="list-disc mt-2 text-justify tracking-tighter">
                 <li>Development of multiple internal applications in addition to
               IT-Project Management.</li>
@@ -72,7 +72,7 @@ export default function ExperienceSection() {
               image="/logo-mw-2x.png"
               left={false}
             >
-              <p className="font-bold">04/2021 - 08/2021</p>
+              <p className="font-bold">09/2022 - Now</p>
               <ul className="list-disc mt-2 text-justify tracking-tighter">
                 <li>Multiple projects with a focus in Full-Stack Web-Development with
               a side of DevOps.</li>
