@@ -67,13 +67,11 @@ export default function ProfessionalSkills() {
 
   
   return (
-    <div ref={ref} className="flex flex-wrap gap-2 max-w-xl">
+    <div ref={ref} className={`flex flex-wrap gap-2 max-w-xl ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} transition duration-700 ease-out`}>
       {skills.map((skill, index) => (
         <SkillBadge
           key={skill}
           name={skill}
-          isVisible={isVisible} 
-          animationDelay={index * 100}
         />
       ))}
     </div>

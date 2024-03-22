@@ -1,8 +1,31 @@
+import { useEffect, useRef, useState } from "react";
 import ExperienceTile, { ExperienceSpacer } from "./experience";
 
 export default function ExperienceSection() {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
     return(
-        <div className="grid cols-1 flex-wrap justify-center gap-x-0 sm:gap-x-0 md:gap-x-4 lg:gap-x-24 xl: 2xl:gap-x-24">
+        <div ref={ref} className={`grid cols-1 flex-wrap justify-center gap-x-0 sm:gap-x-0 md:gap-x-4 lg:gap-x-24 xl: 2xl:gap-x-24 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} transition duration-700 ease-out`}>
             <ExperienceTile
               title="University of Augsburg"
               image="/unia.jpeg"

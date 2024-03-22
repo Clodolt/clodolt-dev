@@ -8,7 +8,11 @@ import { StaticImageData } from "next/image";
 import { useState } from "react";
 import ProjectModal from "./projectModal";
 import InterestSection from "./interest-section";
-import PorjectSection from "./project-section";
+import ProjectSection from "./project-section";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub, faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
@@ -65,7 +69,26 @@ export default function Home() {
         </div>
         <div className="w-full mb-64">
           <p className="text-center text-3xl my-10">Personal Projects</p>
-          <PorjectSection handleProjectModalChange={handleProjectModalChange}  />
+          <ProjectSection handleProjectModalChange={handleProjectModalChange}  />
+        </div>
+        <div className="w-full mb-64">
+        <p className="text-center text-3xl my-10">Contact me here!</p>
+
+            <div className="flex items-center justify-center gap-14">
+            <Link href="https://github.com/Clodolt" target='_blank' className="m-4">
+            <FontAwesomeIcon icon={faGithub} color="white" size="2x" className="hover:scale-125"/>
+            </Link>
+            <Link href="https://www.linkedin.com/in/tim-chen-1912b31a4/" target='_blank' className="m-4">
+            <FontAwesomeIcon icon={faLinkedin} color="white" size="2x" className="hover:scale-125"/>
+            </Link>
+            <Link href="https://twitter.com/timdaltonchen" target='_blank' className="m-4">
+            <FontAwesomeIcon icon={faTwitter} color="white" size="2x" className="hover:scale-125"/>
+            </Link>
+            <Link href="mailto:Tim.chen@outlook.de" className="m-4">
+            <FontAwesomeIcon icon={faEnvelope} color="white" size="2x" className="hover:scale-125"/>
+            </Link>
+            </div>
+          
         </div>
         {showModal && <ProjectModal image={projectModalImage} handleClose={handleProjectModalClose} />}
       </div>

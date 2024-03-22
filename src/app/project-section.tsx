@@ -2,13 +2,14 @@ import ProjectTile from "./projectTile";
 import DiscordBot from "../../public/projects/Bot.gif";
 import Tooki from "../../public/projects/tookiorg.gif";
 import Rezept from "../../public/projects/Rezept.png";
+import Portfolio from "../../public/projects/Portfolio.gif";
 import { StaticImageData } from "next/image";
 
 interface Props {
     handleProjectModalChange: (image: StaticImageData) => void;
 }
 
-export default function PorjectSection({handleProjectModalChange}: Props) {
+export default function ProjectSection({handleProjectModalChange}: Props) {
     return (
         <div className="flex mx-auto items-center justify-evenly flex-wrap gap-8">
             <ProjectTile image={Tooki} name="Tooki.org" handleModalChange={handleProjectModalChange}>
@@ -33,10 +34,9 @@ export default function PorjectSection({handleProjectModalChange}: Props) {
                 <span>TypeScript, Node, DiscordJS, MongoDB</span>
               </p>
             </ProjectTile>
-            <ProjectTile image={DiscordBot} name="Portfolio" handleModalChange={handleProjectModalChange}>
+            <ProjectTile image={Portfolio} name="Portfolio" handleModalChange={handleProjectModalChange}>
               <p>
-                The website you are currently on with an API Service for some
-                smaller projects.
+                The website you are currently on. To show off some of the projects I have been working on.
               </p>
               <p className="mt-2">
                 <b>Tech-Stack:&nbsp;</b>
