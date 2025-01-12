@@ -11,6 +11,7 @@ interface Props {
 
 export default function ProjectSection({handleProjectModalChange}: Props) {
     return (
+      <div>
         <div className="flex mx-auto items-center justify-evenly flex-wrap gap-8">
             <ProjectTile image={Tooki} name="Tooki.org" handleModalChange={handleProjectModalChange}>
               <p>
@@ -56,5 +57,7 @@ export default function ProjectSection({handleProjectModalChange}: Props) {
               </p>
             </ProjectTile>
           </div>
+          <div className="text-center my-10">...and many more non-personal projects and contributions!</div>
+      </div>
     )
 }

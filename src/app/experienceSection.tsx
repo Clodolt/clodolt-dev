@@ -25,7 +25,7 @@ export default function ExperienceSection() {
   }, []);
 
     return(
-        <div ref={ref} className={`grid cols-1 flex-wrap justify-center gap-x-0 sm:gap-x-0 md:gap-x-4 lg:gap-x-24 xl: 2xl:gap-x-24 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} transition duration-700 ease-out`}>
+        <div ref={ref} className={`flex flex-col items-center gap-y-4 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} transition duration-700 ease-out`}>
             <ExperienceTile
               title="University of Augsburg"
               image="/unia.jpeg"
@@ -34,7 +34,7 @@ export default function ExperienceSection() {
               <p className="font-bold">10/2019 - Now</p>
               <ul className="list-disc mt-2 text-justify tracking-tighter">
                 <li>Enrolled in the B.Sc. Business Informatics program</li>
-                <li className="mt-2">Specialization in informatics</li>
+                <li className="mt-2">Specialization in computer science</li>
               </ul>
             </ExperienceTile>
             <ExperienceSpacer />
@@ -74,8 +74,7 @@ export default function ExperienceSection() {
             >
               <p className="font-bold">09/2022 - Now</p>
               <ul className="list-disc mt-2 text-justify tracking-tighter">
-                <li>Multiple projects with a focus in Full-Stack Web-Development with
-              a side of DevOps.</li>
+                <li>Multiple projects with a focus in Full-Stack Web-Development and DevOps. Currently focused on an AI-Assisted DevOps Solution</li>
                 <li className="mt-2">Java, Spring Boot, MongoDB, TypeScript, Angular, Docker, Kubernetes, JUnit, React, Remix, Prisma, PostgreSQL, Azure DevOps</li>
               </ul>
             </ExperienceTile>
