@@ -74,8 +74,8 @@ export default function ExperienceSection() {
             >
               <p className="font-bold">09/2022 - Now</p>
               <ul className="list-disc mt-2 text-justify tracking-tighter">
-                <li>Multiple projects with a focus in Full-Stack Web-Development and DevOps. Currently focused on an AI-Assisted DevOps Solution</li>
-                <li className="mt-2">Java, Spring Boot, MongoDB, TypeScript, Angular, Docker, Kubernetes, JUnit, React, Remix, Prisma, PostgreSQL, Azure DevOps</li>
+                <li>Multiple projects with a focus in Full-Stack Web-Development, AI and DevOps. Developed a DevOps AI Bot. Currently working in a project for BMW</li>
+                <li className="mt-2">Java, Kotlin, Spring Boot, MongoDB, TypeScript, Angular, Python, Langchain, Docker, Kubernetes, JUnit, React, Remix, Prisma, PostgreSQL, Azure DevOps</li>
               </ul>
             </ExperienceTile>
           </div>
