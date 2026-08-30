@@ -1,0 +1,59 @@
+name: Build and deploy
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx next lint
+      - run: npm run build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: out
+          retention-days: 7
+          if-no-files-found: error
+
+  deploy:
+    # PRs only build; pushes to master deploy the static export.
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: out
+      - name: Install deploy key
+        run: |
+          mkdir -p ~/.ssh && chmod 700 ~/.ssh
+          printf '%s\n' "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/deploy
+          chmod 600 ~/.ssh/deploy
+          # Pinned server host key - a MITM or a rebuilt server fails here instead of silently trusting.
+          echo "152.53.230.214 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP5ai6xNf+FdtvuLWeOS7o1J8G/9l0918hsI+KEKd+jg" > ~/.ssh/known_hosts
+      - name: Sync to server
+        # The deploy key is jailed by rrsync to this site's directory - '/' here is /var/www/clodolt.dev.
+        run: |
+          rsync -az --delete --chmod=D2775,F664 \
+            -e "ssh -i ~/.ssh/deploy -o StrictHostKeyChecking=yes -o IdentitiesOnly=yes" \
+            out/ deploy@152.53.230.214:/
+      - name: Verify
+        run: curl -sSf -o /dev/null -w 'https://clodolt.dev -> HTTP %{http_code}\n' https://clodolt.dev/
