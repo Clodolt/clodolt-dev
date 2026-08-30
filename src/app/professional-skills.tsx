@@ -37,7 +37,7 @@ const skills = [
   "PyTest",
   "Pydantic",
   "Streamlit",
-  "PostgresSQL",
+  "PostgreSQL",
   "MongoDB",
   "Docker",
   "Kubernetes",

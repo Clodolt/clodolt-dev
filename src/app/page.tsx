@@ -17,9 +17,13 @@ import Link from "next/link";
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
   const [projectModalImage, setProjectModalImage] = useState<StaticImageData>();
+  const [projectModalName, setProjectModalName] = useState("");
+  const [projectModalVideo, setProjectModalVideo] = useState<string | undefined>();
 
-  const handleProjectModalChange = (image: StaticImageData) => {
+  const handleProjectModalChange = (image: StaticImageData, name: string, video?: string) => {
     setProjectModalImage(image);
+    setProjectModalName(name);
+    setProjectModalVideo(video);
     setShowModal(true);
   }
 
@@ -75,22 +79,22 @@ export default function Home() {
         <p className="text-center text-3xl my-10">Contact me here!</p>
 
             <div className="flex items-center justify-center gap-14">
-            <Link href="https://github.com/Clodolt" target='_blank' className="m-4">
+            <Link href="https://github.com/Clodolt" target='_blank' rel="noopener noreferrer" aria-label="GitHub" className="m-4">
             <FontAwesomeIcon icon={faGithub} color="white" size="2x" className="hover:scale-125"/>
             </Link>
-            <Link href="https://www.linkedin.com/in/tim-chen-1912b31a4/" target='_blank' className="m-4">
+            <Link href="https://www.linkedin.com/in/tim-chen-1912b31a4/" target='_blank' rel="noopener noreferrer" aria-label="LinkedIn" className="m-4">
             <FontAwesomeIcon icon={faLinkedin} color="white" size="2x" className="hover:scale-125"/>
             </Link>
-            <Link href="https://twitter.com/timdaltonchen" target='_blank' className="m-4">
+            <Link href="https://twitter.com/timdaltonchen" target='_blank' rel="noopener noreferrer" aria-label="X (Twitter)" className="m-4">
             <FontAwesomeIcon icon={faTwitter} color="white" size="2x" className="hover:scale-125"/>
             </Link>
-            <Link href="mailto:Tim.chen@outlook.de" className="m-4">
+            <Link href="mailto:Tim.chen@outlook.de" aria-label="Email" className="m-4">
             <FontAwesomeIcon icon={faEnvelope} color="white" size="2x" className="hover:scale-125"/>
             </Link>
             </div>
           
         </div>
-        {showModal && <ProjectModal image={projectModalImage} handleClose={handleProjectModalClose} />}
+        {showModal && <ProjectModal image={projectModalImage} name={projectModalName} video={projectModalVideo} handleClose={handleProjectModalClose} />}
       </div>
     </div>
   );

@@ -21,11 +21,11 @@ const skills = [
     "Fresh.Js",
     "Three.Js",
     "OpenAI API",
-    "Stable Difussion",
+    "Stable Diffusion",
     "Midjourney"
 ];
 
-export default function ProfessionalSkills() {
+export default function PersonalSkills() {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
